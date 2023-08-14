@@ -37,7 +37,7 @@
         import * as THREE from 'three';
         import ChromaKeyMaterial from './chromakey-three-js';
 
-        // Создание сцены и камеры
+        // Creating a scene and camera
         const scene = new THREE.Scene();
         const canvas = document.getElementById('video-canvas');
         const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
@@ -60,7 +60,7 @@
             const myGreenScreenVideoObject = new THREE.Mesh(myGeometry, myGreenScreenMaterial);
 
             const basicMaterial = new THREE.MeshBasicMaterial({color: 0xFFCC00});
-            const testMesh = new THREE.Mesh(myGeometry, basicMaterial);
+            const testMesh = new THREE.Mesh(myGeometry, basicMaterial); // a plane to put a background behind the video
 
             function animate() {
                 requestAnimationFrame( animate );
@@ -75,7 +75,7 @@
             scene.add(light);
             scene.add(camera);
             scene.add(testMesh);
-            scene.add( myGreenScreenVideoObject );
+            scene.add(myGreenScreenVideoObject);
 
             animate();
         }, 1500)
