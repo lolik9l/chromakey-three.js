@@ -14,8 +14,6 @@
 
 import * as THREE from "three"; // Or window.THREE
 
-console.log(THREE, "THREE");
-
 class ChromaKeyMaterial extends THREE.ShaderMaterial {
   constructor(idVideo, keyColor) {
     super();

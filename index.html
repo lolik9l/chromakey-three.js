@@ -30,7 +30,6 @@
     <canvas id="video-canvas"></canvas>
 
     <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
-
     <script type="importmap">
         {
             "imports": {
@@ -39,6 +38,7 @@
             }
         }
     </script>
+
     <script type="module">
         import * as THREE from 'three';
         import ChromaKeyMaterial from './chromakey-three-js.js';
@@ -65,7 +65,7 @@
             const myGeometry = new THREE.PlaneGeometry(32, 18);
             const myGreenScreenVideoObject = new THREE.Mesh(myGeometry, myGreenScreenMaterial);
 
-            console.log(myGreenScreenMaterial, myGreenScreenVideoObject, 'myGreenScreenMaterial, myGreenScreenVideoObject')
+            // console.log(myGreenScreenMaterial, myGreenScreenVideoObject, 'myGreenScreenMaterial, myGreenScreenVideoObject')
 
             const basicMaterial = new THREE.MeshBasicMaterial({color: 0xFFCC00});
             const testMesh = new THREE.Mesh(myGeometry, basicMaterial); // a plane to put a background behind the video
