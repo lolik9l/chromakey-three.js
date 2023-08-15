@@ -8,12 +8,14 @@
 <body>
     <style>
         #video {
-            /* display: none; */
-            width: 100vw;
+            display: flex;
+            width: 85dvw;
+            max-width: 100%;
             height: auto;
             object-fit: contain;
             object-position: right;
             aspect-ratio: 16 / 9;
+            margin-left: auto;
         }
         #video-canvas {
           position: fixed;
@@ -62,7 +64,7 @@
 
         setTimeout(() => {
             const myGreenScreenMaterial = new ChromaKeyMaterial("video", 0xd432);
-            const myGeometry = new THREE.PlaneGeometry(32, 18);
+            const myGeometry = new THREE.PlaneGeometry(16, 9);
             const myGreenScreenVideoObject = new THREE.Mesh(myGeometry, myGreenScreenMaterial);
 
             // console.log(myGreenScreenMaterial, myGreenScreenVideoObject, 'myGreenScreenMaterial, myGreenScreenVideoObject')
