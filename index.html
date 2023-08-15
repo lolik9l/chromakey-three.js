@@ -9,18 +9,24 @@
     <style>
         #video {
             /* display: none; */
+            width: 100vw;
+            height: auto;
+            object-fit: contain;
+            object-position: right;
+            aspect-ratio: 16 / 9;
         }
         #video-canvas {
           position: fixed;
           top: 0;
           left: 0;
           z-index: 999;
-          width: 600px;
-          height: 400px;
+          width: 800px;
+          height: auto;
+          aspect-ratio: 16 / 9;
         }
     </style>
 
-    <video id="video" src="./breadcrumbs.mp4" muted autoplay loop></video>
+    <video id="video" src="assets/breadcrumbs.mp4" muted autoplay loop></video>
     <canvas id="video-canvas"></canvas>
 
     <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
@@ -35,7 +41,7 @@
     </script>
     <script type="module">
         import * as THREE from 'three';
-        import ChromaKeyMaterial from './chromakey-three-js';
+        import ChromaKeyMaterial from './chromakey-three-js.js';
 
         // Creating a scene and camera
         const scene = new THREE.Scene();
@@ -58,6 +64,8 @@
             const myGreenScreenMaterial = new ChromaKeyMaterial("video", 0xd432);
             const myGeometry = new THREE.PlaneGeometry(32, 18);
             const myGreenScreenVideoObject = new THREE.Mesh(myGeometry, myGreenScreenMaterial);
+
+            console.log(myGreenScreenMaterial, myGreenScreenVideoObject, 'myGreenScreenMaterial, myGreenScreenVideoObject')
 
             const basicMaterial = new THREE.MeshBasicMaterial({color: 0xFFCC00});
             const testMesh = new THREE.Mesh(myGeometry, basicMaterial); // a plane to put a background behind the video

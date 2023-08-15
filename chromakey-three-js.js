@@ -1,7 +1,7 @@
 /* 
   Usage:
 
-  import ChromaKeyMaterial from './three-js-chromakey.js';
+  import ChromaKeyMaterial from './chromakey-three-js';
 
   // 0xd432 is the green screen color, insert yours, if different, below
   const keyColor = 0xd432;
@@ -13,6 +13,8 @@
 */
 
 import * as THREE from "three"; // Or window.THREE
+
+console.log(THREE, "THREE");
 
 class ChromaKeyMaterial extends THREE.ShaderMaterial {
   constructor(idVideo, keyColor) {
@@ -31,7 +33,7 @@ class ChromaKeyMaterial extends THREE.ShaderMaterial {
       this.videoTexture.minFilter = THREE.LinearFilter;
       // this.videoTexture.magFilter = THREE.LinearFilter;
 
-      //TODO: add a wait for the video to load
+      // TODO: add a wait for the video to load
 
       this.setValues({
         uniforms: {
